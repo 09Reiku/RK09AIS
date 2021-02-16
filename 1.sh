@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 echo "Well, i see here you are again... kek"
 echo "==>timedatectl set-ntp true"
 timedatectl set-ntp true
