@@ -20,7 +20,7 @@ echo '==> grub'
 pacman -Syy
 pacman -S grub efibootmgr --noconfirm 
 
-rub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi --removable
+grub-install --target=x86_64-efi --bootloader-id=Arch --efi-directory=/boot/efi --removable
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
