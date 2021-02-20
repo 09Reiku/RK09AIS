@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 read -p "!!! hostname: " hostname
 read -p "!!! username: " username
 echo $hostname > /etc/hostname
