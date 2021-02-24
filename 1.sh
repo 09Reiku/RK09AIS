@@ -15,7 +15,7 @@ read -p "!!! root on: " partroot
 read -p "!!! swap on: " partswap
 
 echo '==> formatting boot, root and swap'
-mkfs.ext2  $partboot -L boot
+mkfs.fat -F32  $partboot -L boot
 mkfs.ext4  $partroot -L root
 mkswap $partswap -L swap
 
@@ -30,7 +30,9 @@ echo '==> pacstrap'
 pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl sudo
 
 echo '==> genfstab'
+umount /mnt/boot/efi
 genfstab -pU /mnt >> /mnt/etc/fstab
+mount $partboot /mnt/boot/efi
 
 echo '==> changing root and launch second script'
 arch-chroot /mnt sh -c "$(curl -fsSL https://raw.githubusercontent.com/09Reiku/RK09AIS/main/2.sh)"
