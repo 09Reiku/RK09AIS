@@ -42,9 +42,9 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo '==> last packages'
-pacman -S pulseaudio pulseaudio-alsa xorg xorg-server xorg-drivers xorg-xinit sddm networkmanager ttf-liberation ttf-dejavu gnome gnome-tweak-tool git
+pacman -S pulseaudio pulseaudio-alsa xorg xorg-server xorg-drivers xorg-xinit networkmanager ttf-liberation ttf-dejavu gnome gnome-tweak-tool git
 
-systemctl enable sddm
+systemctl enable gdm
 systemctl enable NetworkManager
 
 echo '==> BlackArch'
