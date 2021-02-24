@@ -3,12 +3,9 @@ echo "Well, i see here you are again... kek"
 echo "==>timedatectl set-ntp true"
 timedatectl set-ntp true
 
-read -p "!!! Now you need to configurate partiptions via cfdisk like this: sdb1 - bootloader; sdb2 - root; sdb3 - swap; Type anything here now: " shit
-
-cfdisk /dev/sdb
+read -p "!!! Well, I hope you configured your partitions on the disk, if it isn't, press ctrl+C to leave, or type anything to continue, if you did it" shit
 
 echo 'lsblk configuration'
-fdisk -l
 
 read -p "!!! boot on: " partboot
 read -p "!!! root on: " partroot
